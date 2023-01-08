@@ -11,7 +11,11 @@
   <main class="container-bg" aria-label="primaria">
     <div class="container">
       <form action="#" method="post">
-        <h1>Acesse sua conta</h1>
+        <div class="avatar">
+          <img src="./img/icon/avatar-default-icon.png" alt="avatar">
+          <span class="welcome"></span>
+        </div>
+        <h1>Access your account</h1>
         <div class="user-box">
           <input type="text" id="login" required autocomplete="off">
           <label for="login" name="login" class="label">User name</label>
@@ -20,9 +24,30 @@
           <input type="password" id="senha" required autocomplete="off">
           <label for="senha" name="senha" class="label">Password</label>
         </div>
-        <input class="botao" type="submit" value="Enviar"> 
+        <input class="botao" type="submit" value="Login"> 
+
+        <div class="forgot">
+          <p><a href="#">Forgot your password?</a></p>
+        </div>
       </form>
     </div>
   </main>
 </body>
 </html>
+
+<!--- Ingles ou em português
+- Titulo e/ou Controles Maiusculo ou Minusculo
+ Se escolher titulo maiúsculo os titulos deverão ser maiúsculos;
+ Se escolher controles minusculos então todos os controles deverão der minusculas;
+- Cuidado com o contraste dos labels dos controles
+ Nítidos User name, Password, mas o Enviar muito escuro [Fundo escuro label clara, fundo Claro, label escuro]
+
+
+Tela 
+
+[Titulo] ACESSE SUA CONTA {Português} {Maiúsculo}
+
+[Controle] User name {Inglês} {Minúsculo}
+[Controle] Password {Inglês} {Minúsculo}
+
+[Controle] ENVIAR {Português} {Maiúsculo}-->
