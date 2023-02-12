@@ -6,52 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
-  <main class="container-bg" aria-label="primaria">
-    <div class="container">
-      <form action="#" method="post">
-        <div class="avatar">
-          <img src="./img/icon/company-building-icon.png" alt="Company">
-          <span class="welcome"></span>
-        </div>
-        <h1>Access your account</h1>
-        <div class="user-box">
-          <input type="text" id="login" required autocomplete="off">
-          <label for="login" name="login" class="label">User name</label>
-        </div>
-        <div class="user-box">
-          <input type="password" id="senha" required autocomplete="off">
-          <label for="senha" name="senha" class="label">Password</label>
-        </div>
+  <main class="container">
+    <div class="conteudo">
+      <input type="radio" name="tipo" id="log" value="login" checked>
+      <label for="log">Login</label>
 
-        <button onclick="teste()" class="botao">click here</button>
-        <!--<input class="botao" type="submit" value="Login">--> 
+      <input type="radio" name="tipo" id="cadastrar" value="cadastrar">
+      <label for="cadastrar">Cadastro</label>
 
-        <div class="forgot">
-          <p><a href="./path.html">Forgot your password?</a></p>
-        </div>
+      <form action="#" method="post" class="login content" id="login" autocomplete="off">
+        
+        <input type="text" name="nome" id="nome" placeholder="Name">
+        
+        <input type="password" name="senha" id="senha" placeholder="Password">       
+
+        <a href="./" class="botao">Logar</a>
+
+        <a href="path.html" class="forgot">Forgot your password?</a>
       </form>
+
+      <form action="#" method="post" class="cadastro content" id="cadastro" autocomplete="off">
+        
+        <input type="text" name="nomec" id="nomec" placeholder="Digite seu nome">       
+        
+        <input type="email" name="email" id="email" placeholder="Seu Email">        
+        
+        <input type="text" name="cpf" id="cpf" placeholder="Seu CPF" maxlength="11">     
+
+        <a href="./" class="botao">Cadastrar</a>
+      </form>
+      
     </div>
   </main>
-
-  <script src="js/click.js"></script>
+  
 </body>
 </html>
-
-<!--- Ingles ou em português
-- Titulo e/ou Controles Maiusculo ou Minusculo
- Se escolher titulo maiúsculo os titulos deverão ser maiúsculos;
- Se escolher controles minusculos então todos os controles deverão der minusculas;
-- Cuidado com o contraste dos labels dos controles
- Nítidos User name, Password, mas o Enviar muito escuro [Fundo escuro label clara, fundo Claro, label escuro]
-
-
-Tela 
-
-[Titulo] ACESSE SUA CONTA {Português} {Maiúsculo}
-
-[Controle] User name {Inglês} {Minúsculo}
-[Controle] Password {Inglês} {Minúsculo}
-
-[Controle] ENVIAR {Português} {Maiúsculo}-->
