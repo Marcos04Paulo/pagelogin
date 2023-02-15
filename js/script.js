@@ -10,16 +10,16 @@ toggleIcon.addEventListener("click", togglePassInput);
 
 function handlePassInput(e){
   if (passInput.value.length === 0){
-    passLabel.innerHTML = "Strength";
+    passLabel.innerHTML = "Forte";
     addClass();
   } else if (passInput.value.length <= 4){
-    passLabel.innerHTML = "Weak";
+    passLabel.innerHTML = "Fraco";
     addClass("fraco");
   } else if (passInput.value.length <= 7) {
-    passLabel.innerHTML = "Not bad";
+    passLabel.innerHTML = "Medio";
     addClass("medio");
   } else {
-    passLabel.innerHTML = "Strong";
+    passLabel.innerHTML = "Forte";
     addClass("forte");
   }
 }
