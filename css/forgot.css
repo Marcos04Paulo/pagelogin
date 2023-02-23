@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container-bg{
@@ -17,7 +19,6 @@
 
 .container{
   background: #222;
-  min-height: 10vh;
   max-width: 330px;
   padding: 20px;
   border-radius: 1px 50px;
@@ -34,7 +35,6 @@ form{
   padding-top: 20px;
   padding-bottom: 40px;
   color: #fff;
-  text-shadow: 1px 1px 3px #aaa;
 }
 
 .new{
@@ -57,7 +57,6 @@ form{
   z-index: 1;
   user-select: none;
   color: #ccc;
-  font-weight: 600;
   pointer-events: none;
   font-size: .8rem;
 }
@@ -69,7 +68,7 @@ form{
   border: 1px solid #aaa;
   background: #222;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: .9rem;
   outline: none;
   color: #aaa;
 }
