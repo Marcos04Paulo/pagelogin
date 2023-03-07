@@ -6,45 +6,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="./css/style.css">
+  <!-- Inclusão do jQuery-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <!-- Inclusão do Plugin jQuery Validation-->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/jquery.validate.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
 
+	<script>
+		$(document).ready(function() {
+    		
+			$("#frmCadastro").validate({
+				rules: {
+				  cnome: {
+					required: true,
+					minlength: 3,
+				  },
+        cemail:{
+					required: true
+				  },
+				  ccpf: {
+					required: true
+				  },
+          cpass: {
+            required: true,
+            rangelength: [4,10]
+          },
+          cpassc: {
+            required: true,
+            equalTo: "#cpass"
+          }
+				},
+				messages: {
+				  cnome: {
+					required: "Informe seu nome.",
+					minlength: "Mínimo de 3 caracteres"
+				  },
+				  cemail: {
+					required: "Informe seu Email."
+				  },
+				  ccpf: {
+					required: "Informe seu CPF."
+				  },
+          cpass: {
+            required: "Digite a senha",
+            rangelength: "A senha deve contar entre 4 e 10 caracteres"
+          },
+          cpassc: {
+            required: "Repita a senha",
+            equalTo: "Senha diferente"
+          }
+				},
+				submitHandler: function(form) {
+				  form.submit();
+				  }
+			});
+      $("#btnCadastro").click(function() {
+				$("#frmCadastro").submit();
+			  });
+        });
+	</script>
+	</script>
 </head>
 <body>
   <main class="container">
     <div class="conteudo">
       <input type="radio" name="tipo" id="log" value="login" checked>
       <label for="log">Acesso</label>
-
       <input type="radio" name="tipo" id="cadastrar" value="cadastrar">
       <label for="cadastrar">Cadastro</label>
 
       <form action="#" method="post" class="login content" id="login" autocomplete="off">
         
-        <input type="text" name="nome" id="nome" placeholder="Nome">
+        <input type="text" name="lcnome" id="lcnome" placeholder="Nome">
         
-        <input type="password" name="senha" id="senha" placeholder="Senha">       
+        <input type="password" name="lcsenha" id="lcsenha" placeholder="Senha">       
 
         <a href="./" class="botao">Acessar</a>
 
         <a href="path.html" class="forgot">Esqueceu a senha?</a>
       </form>
 
-      <form action="#" method="post" class="cadastro content" id="cadastro" autocomplete="off">
+      <form action="#" method="POST" class="cadastro content" name="frmCadastro" id="frmCadastro">
         
-        <input type="text" name="nomec" id="nomec" placeholder="Digite seu nome">       
+        <input type="text" name="cnome" id="cnome" placeholder="Digite seu nome">  
+		
+        <input type="email" name="cemail" id="cemail" placeholder="Seu Email">       
         
-        <input type="email" name="email" id="email" placeholder="Seu Email">        
-        
-        <input type="text" name="cpf" id="cpf" placeholder="Seu CPF" maxlength="11">     
+        <input type="text" name="ccpf" id="ccpf" placeholder="Seu CPF" maxlength="11">     
 
-        <input type="password" name="pass" id="pass" placeholder="Digite sua senha">
+        <input type="password" name="cpass" id="cpass" placeholder="Digite sua senha">
+				
+        <input type="password" name="cpassc" id="cpassc" placeholder="Confirme sua senha">
 
-        <input type="password" name="pass" id="pass" placeholder="Confirme sua senha">
-
-        <a href="./" class="botao">Cadastrar</a>
+    	  <a id="btnCadastro" class="botao">Cadastrar</a>
+		
+	
+		
       </form>
-      
+     
     </div>
   </main>
-  
-</body>
+	 </body> 
 </html>
