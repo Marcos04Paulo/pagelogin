@@ -12,60 +12,6 @@
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/jquery.validate.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.12.0/additional-methods.js"></script>
 
-	<script>
-		$(document).ready(function() {
-    		
-			$("#frmCadastro").validate({
-				rules: {
-				  cnome: {
-					required: true,
-					minlength: 3,
-				  },
-        cemail:{
-					required: true
-				  },
-				  ccpf: {
-					required: true
-				  },
-          cpass: {
-            required: true,
-            rangelength: [4,10]
-          },
-          cpassc: {
-            required: true,
-            equalTo: "#cpass"
-          }
-				},
-				messages: {
-				  cnome: {
-					required: "Informe seu nome.",
-					minlength: "Mínimo de 3 caracteres"
-				  },
-				  cemail: {
-					required: "Informe seu Email."
-				  },
-				  ccpf: {
-					required: "Informe seu CPF."
-				  },
-          cpass: {
-            required: "Digite a senha",
-            rangelength: "A senha deve contar entre 4 e 10 caracteres"
-          },
-          cpassc: {
-            required: "Repita a senha",
-            equalTo: "Senha diferente"
-          }
-				},
-				submitHandler: function(form) {
-				  form.submit();
-				  }
-			});
-      $("#btnCadastro").click(function() {
-				$("#frmCadastro").submit();
-			  });
-        });
-	</script>
-	</script>
 </head>
 <body>
   <main class="container">
@@ -81,30 +27,39 @@
         
         <input type="password" name="lcsenha" id="lcsenha" placeholder="Senha">       
 
-        <a href="./" class="botao">Acessar</a>
-
-        <a href="path.html" class="forgot">Esqueceu a senha?</a>
+        <div class="divBtn">
+          <a href="./" class="botao" id="btnlogin">Acessar</a>
+          <a href="path.html" class="forgot">Esqueceu a senha?</a>
+        </div>
       </form>
 
       <form action="#" method="POST" class="cadastro content" name="frmCadastro" id="frmCadastro">
         
-        <input type="text" name="cnome" id="cnome" placeholder="Digite seu nome">  
-		
-        <input type="email" name="cemail" id="cemail" placeholder="Seu Email">       
+        <div class="grp1">
+          <input type="text" name="cnome" id="cnome" placeholder="Digite seu nome">
+
+          <input type="email" name="cemail" id="cemail" placeholder="Seu Email">
+          
+          <input type="text" name="ccpf" id="ccpf" placeholder="Seu CPF" minlength="11" maxlength="11">
+        </div>
         
-        <input type="text" name="ccpf" id="ccpf" placeholder="Seu CPF" maxlength="11">     
+        <div class="grp2">
+          <input type="text" name="cCep" id="cCep" placeholder="Informe seu CEP" minlength="8" maxlength="8">
 
-        <input type="password" name="cpass" id="cpass" placeholder="Digite sua senha">
-				
-        <input type="password" name="cpassc" id="cpassc" placeholder="Confirme sua senha">
+          <input type="password" name="cpass" id="cpass" placeholder="Digite sua senha">
 
-    	  <a id="btnCadastro" class="botao">Cadastrar</a>
-		
-	
+          <input type="password" name="cpassc" id="cpassc" placeholder="Confirme sua senha">
+        </div>
+
+        <div class="divBtnC">
+          <a id="btnCadastro" class="botao">Cadastrar</a>
+        </div>
 		
       </form>
      
     </div>
   </main>
-	 </body> 
+
+  <script src="./js/validation.js"></script>
+</body> 
 </html>
